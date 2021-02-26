@@ -60,7 +60,7 @@ async def help(context):
 
 @client.event
 async def on_ready():
-    await client.change_presence(status=discord.Status.online, activity=discord.Game('clubbing at Openhouse'))
+    await client.change_presence(status=discord.Status.online, activity=discord.Game('? nope. Studying at Openroom'))
     print('Pikachu!')
 
 # Run the bot on server
