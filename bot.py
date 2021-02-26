@@ -39,18 +39,19 @@ async def startjam(context, *, message):
         url, headers={"Content-Type": 'application/json'}, params={}, json=payload)
     linkopenroom = request.json()["room_url"]
     print(linkopenroom)
-    myEmbed = discord.Embed(title="OpenRoom", color=0x00ff00)
+    myEmbed = discord.Embed(title="OpenRoom", color="#ef5c34")
     myEmbed.add_field(name="Session by", value=author_id)
     myEmbed.add_field(name="Topic", value=str2, inline=False)
     myEmbed.add_field(name="Joining Link", value=linkopenroom, inline=False)
     myEmbed.set_footer(text='powered by openhouse')
     await context.message.channel.send(embed=myEmbed)
     str2 = ""
+# 0x00ff00
 
 
 @client.command(pass_context=True)
 async def help(context):
-    myEmbed = discord.Embed(title="OpenRoom Faq", color=0x00ff00)
+    myEmbed = discord.Embed(title="OpenRoom Faq", color="#ef5c34")
     myEmbed.add_field(name="How to start a session?", value=helptxt)
     myEmbed.add_field(name="Any other questions?", value=support, inline=False)
     myEmbed.set_footer(text='powered by openhouse')
