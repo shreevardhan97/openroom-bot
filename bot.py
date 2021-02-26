@@ -17,8 +17,8 @@ gify = ["https://gph.is/g/aQQDGMV",
         "https://gph.is/g/4bjzgmo",
         "http://gph.is/1CBEAKL"]
 l = len(gify)
-helptxt = " \"!openroom startjam <topic_without_space>\" "
-support = "Reach out admins/openhouse reps"
+helptxt = " \"!openroom startjam <topic_without_spaces>\" "
+support = "Reach out to admins/openhouse reps"
 
 
 @client.command(name='startjam')
@@ -34,7 +34,7 @@ async def startjam(context, *, message):
     payload = {
         "type": "group_study"
     }
-    url = "https://dev.meets.api.openhouse.study/create/"
+    url = "https://meets.api.openhouse.study/create/"
     request = requests.post(
         url, headers={"Content-Type": 'application/json'}, params={}, json=payload)
     linkopenroom = request.json()["room_url"]
