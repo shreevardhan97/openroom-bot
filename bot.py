@@ -8,7 +8,7 @@ import os
 # Client (our bot)
 client = commands.Bot(command_prefix='!openroom ')
 client.remove_command('help')
-
+ohcolor = discord.Color.from_rgb(239, 92, 52)
 # gifs
 gify = ["https://gph.is/g/aQQDGMV",
         "https://gph.is/g/E0WYq8o",
@@ -39,7 +39,7 @@ async def startjam(context, *, message):
         url, headers={"Content-Type": 'application/json'}, params={}, json=payload)
     linkopenroom = request.json()["room_url"]
     print(linkopenroom)
-    myEmbed = discord.Embed(title="OpenRoom", color=16777215)
+    myEmbed = discord.Embed(title="OpenRoom", color=ohcolor)
     myEmbed.add_field(name="Session by", value=author_id)
     myEmbed.add_field(name="Topic", value=str2, inline=False)
     myEmbed.add_field(name="Joining Link", value=linkopenroom, inline=False)
@@ -51,7 +51,7 @@ async def startjam(context, *, message):
 
 @client.command(pass_context=True)
 async def help(context):
-    myEmbed = discord.Embed(title="OpenRoom Faq", color=16777215)
+    myEmbed = discord.Embed(title="OpenRoom Faq", color=ohcolor)
     myEmbed.add_field(name="How to start a session?", value=helptxt)
     myEmbed.add_field(name="Any other questions?", value=support, inline=False)
     myEmbed.set_footer(text='powered by openhouse')
