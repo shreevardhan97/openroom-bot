@@ -7,6 +7,7 @@ import os
 
 # Client (our bot)
 client = commands.Bot(command_prefix='!openroom ')
+client.remove_command('help')
 
 # gifs
 gify = ["https://gph.is/g/aQQDGMV",
@@ -47,8 +48,8 @@ async def startjam(context, *, message):
     str2 = ""
 
 
-@client.command(name='faq')
-async def faq(context):
+@client.command(pass_context=True)
+async def help(context):
     myEmbed = discord.Embed(title="OpenRoom Faq", color=0x00ff00)
     myEmbed.add_field(name="How to start a session?", value=helptxt)
     myEmbed.add_field(name="Any other questions?", value=support, inline=False)
