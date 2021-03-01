@@ -29,7 +29,7 @@ async def startjam(context, *, message):
     print(context.message.content)
     str1 = context.message.content
     temp = str1.split()
-    str2 = temp[2:]
+    str2 = temp[2]
     author_id = context.message.author
     payload = {
         "type": "group_study"
